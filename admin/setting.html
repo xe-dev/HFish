@@ -39,10 +39,9 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="btn-group pull-right m-t-15">
-                <button type="button" class="btn btn-custom" onclick="showSetting()"><i class="fa fa-cog"></i> 高级设置
-                </button>
+                <button type="button" class="btn btn-custom" onclick="showSetting()"><i class="fa fa-cog"></i> Advanced Settings </button>
             </div>
-            <h4 class="page-title">系统设置</h4>
+            <h4 class="page-title">System settings</h4>
         </div>
 
         <div class="col-sm-12">
@@ -50,12 +49,12 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
-                        <th width="15%">名称</th>
-                        <th>介绍</th>
-                        <th>更新时间</th>
-                        <th width="10%;">配置状态</th>
-                        <th width="10%;">状态</th>
-                        <th width="6%">操作</th>
+                        <th width="15%">Name</th>
+                        <th>Introduction</th>
+                        <th>Update time</th>
+                        <th width="10%;">Config. Status</th>
+                        <th width="10%;">Status</th>
+                        <th width="6%">operating</th>
                     </tr>
                     </thead>
                     <tbody id="tableList">
@@ -68,9 +67,9 @@
                             document.getElementById("trx{{$e.type}}").innerHTML = t.replace("T", " ").replace("+08:00", " ").replace("Z", "");</script>
                         </td>
                         <td>{{if ne $e.info ""}}
-                            <span class="yes_config">已配置</span>
+                            <span class="yes_config">Configured</span>
                         {{else}}
-                            <span class="no_config">未配置</span>
+                            <span class="no_config">Unconfigured</span>
                         {{end}}
                         </td>
                         <td><input type="checkbox" id="checkbox-{{$e.id}}" data-plugin="switchery"
@@ -83,7 +82,7 @@
                         <td>
                             <button type="button" class="btn btn-primary  btn-sm"
                                     onclick="settingSubFunc('{{$e.id}}','{{$e.type}}')" data-toggle="modal"><i
-                                    class="fa fa-edit"></i> 配置
+                                    class="fa fa-edit"></i> Configuration
                             </button>
                         </td>
                     </tr>
@@ -103,28 +102,28 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">E-mail 通知设置</h4>
+                <h4 class="modal-title" id="myModalLabel">E-mail Notification Settings</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for=""><span class="text-danger">*</span>发送人(账号)</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="请填写发送人账号">
+                    <label for=""><span class="text-danger">*</span>Sender (account)</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Sender account">
                 </div>
                 <div class="form-group">
-                    <label for=""><span class="text-danger">*</span>密码</label>
-                    <input type="password" class="form-control" id="pass" name="pass" placeholder="请填写发送人密码">
+                    <label for=""><span class="text-danger">*</span>Password</label>
+                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Sender password">
                 </div>
                 <div class="form-group">
                     <label for=""><span class="text-danger">*</span>SMTP</label>
-                    <input type="text" class="form-control" id="host" name="host" placeholder="例:smtp.126.com">
+                    <input type="text" class="form-control" id="host" name="host" placeholder="Example : smtp.server.com">
                 </div>
                 <div class="form-group">
-                    <label for=""><span class="text-danger">*</span>端口</label>
-                    <input type="number" class="form-control" id="port" name="port" placeholder="例:465">
+                    <label for=""><span class="text-danger">*</span>Port</label>
+                    <input type="number" class="form-control" id="port" name="port" placeholder="Example:465">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" onclick="updateEmailPost()">保存</button>
+                <button type="submit" class="btn btn-primary" onclick="updateEmailPost()">Save</button>
             </div>
         </div>
     </div>
@@ -136,36 +135,36 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">E-mail 通知设置</h4>
+                <h4 class="modal-title" id="myModalLabel">E-mail Notification settings</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for=""><span class="text-danger">*</span>发送人(账号)</label>
-                    <input type="email" class="form-control" id="alertEmail" name="alertEmail" placeholder="请填写发送人账号">
+                    <label for=""><span class="text-danger">*</span>Sender (account)</label>
+                    <input type="email" class="form-control" id="alertEmail" name="alertEmail" placeholder="Please fill in the sender account">
                 </div>
                 <div class="form-group">
-                    <label for=""><span class="text-danger">*</span>密码</label>
-                    <input type="password" class="form-control" id="alertPass" name="alertPass" placeholder="请填写发送人密码">
+                    <label for=""><span class="text-danger">*</span>password</label>
+                    <input type="password" class="form-control" id="alertPass" name="alertPass" placeholder="Sender's password">
                 </div>
                 <div class="form-group">
                     <label for=""><span class="text-danger">*</span>SMTP</label>
                     <input type="text" class="form-control" id="alertHost" name="alertHost"
-                           placeholder="例:smtp.126.com">
+                           placeholder="Example:smtp.126.com">
                 </div>
                 <div class="form-group">
-                    <label for=""><span class="text-danger">*</span>端口</label>
-                    <input type="number" class="form-control" id="alertPort" name="alertPort" placeholder="例:465">
+                    <label for=""><span class="text-danger">*</span>Port</label>
+                    <input type="number" class="form-control" id="alertPort" name="alertPort" placeholder="Example :465">
                 </div>
                 <div class="form-group">
-                    <label for=""><span class="text-danger">*</span>接收人</label>
-                    <textarea class="form-control" id="receive" name="receive" placeholder="接收人(群发请换行)" cols="30"
+                    <label for=""><span class="text-danger">*</span>Recipient</label>
+                    <textarea class="form-control" id="receive" name="receive" placeholder="Recipient (please change line for group sending)" cols="30"
                               rows="10"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
 
-                <button type="button" class="btn btn-primary" onclick="syncStmpConfig()">同步STMP配置</button>
-                <button type="submit" class="btn btn-primary" onclick="updateReceiveEmailPost()">保存</button>
+                <button type="button" class="btn btn-primary" onclick="syncStmpConfig()">Synchronize STMP configuration</button>
+                <button type="submit" class="btn btn-primary" onclick="updateReceiveEmailPost()">Save</button>
             </div>
         </div>
     </div>
@@ -177,18 +176,18 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">IP 白名单设置</h4>
+                <h4 class="modal-title" id="myModalLabel">IP Whitelist setting</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for=""><span class="text-danger">*</span>IP 列表</label>
+                    <label for=""><span class="text-danger">*</span>IP List</label>
                     <textarea class="form-control" id="whiteIpList" name="whiteIpList" placeholder="请输入ip （多ip请换行）"
                               cols="30"
                               rows="10"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" onclick="saveWhiteIp()">保存</button>
+                <button type="submit" class="btn btn-primary" onclick="saveWhiteIp()">Save</button>
             </div>
         </div>
     </div>
@@ -201,17 +200,17 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">WebHook Api 设置</h4>
+                <h4 class="modal-title">WebHook Api Set up</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for=""><span class="text-danger">*</span>请输入 Url</label>
-                    <input type="url" class="form-control" id="webHookUrl" name="webHookUrl" placeholder="请填写 Url 地址">
+                    <label for=""><span class="text-danger">*</span>please enter Url</label>
+                    <input type="url" class="form-control" id="webHookUrl" name="webHookUrl" placeholder="Please fill in the URL address">
                 </div>
             </div>
             <div class="modal-footer">
 
-                <button type="submit" class="btn btn-primary" onclick="updateWebHookPost()">保存</button>
+                <button type="submit" class="btn btn-primary" onclick="updateWebHookPost()">Save</button>
             </div>
         </div>
     </div>
@@ -224,16 +223,16 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">密码脱敏符号设置</h4>
+                <h4 class="modal-title">Password desensitization symbol setting</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for=""><span class="text-danger">*</span>加密符号</label>
-                    <input type="url" class="form-control" id="passwdTMText" name="webHookUrl" placeholder="请配置加密符号">
+                    <label for=""><span class="text-danger">*</span>Encryption symbol</label>
+                    <input type="url" class="form-control" id="passwdTMText" name="webHookUrl" placeholder="Please configure encryption symbol">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" onclick="updatePasswdTM()">保存</button>
+                <button type="submit" class="btn btn-primary" onclick="updatePasswdTM()">Save</button>
             </div>
         </div>
     </div>
@@ -246,21 +245,21 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">高级设置</h4>
+                <h4 class="modal-title">advanced settings</h4>
             </div>
             <div class="modal-body">
                 <button style="width: 100%;margin-bottom: 20px;" type="button" class="btn btn-custom"
                         onclick="clearData(1)"><i class="fa fa-trash-o"></i>
-                    清空上钩数据
+                    Clear the hook data
                 </button>
                 <button style="width: 100%;margin-bottom: 20px;" type="button" class="btn btn-custom"
                         onclick="clearData(2)"><i
                         class="fa fa-trash-o"></i>
-                    清空集群数据
+                    Clear cluster data
                 </button>
                 <button style="width: 100%;" type="button" class="btn btn-custom" onclick="clearData(3)"><i
                         class="fa fa-trash-o"></i>
-                    清空密码数据
+                    Clear password data
                 </button>
             </div>
         </div>
@@ -491,7 +490,7 @@
     }
 
     function clearData(type) {
-        swal("success", "正在清空数据...", 'success');
+        swal("success", "Clearing data...", 'success');
 
         $.ajax({
             type: "POST",
@@ -502,13 +501,13 @@
             },
             success: function (e) {
                 if (e.code == 200) {
-                    swal("success", "清空成功", 'success');
+                    swal("success", "Empty successfully", 'success');
                 } else {
-                    swal("清空失败", e.msg, 'error');
+                    swal("Empty failed", e.msg, 'error');
                 }
             },
             error: function (e) {
-                swal("清空失败", "请 Github 提交 Issues", 'error');
+                swal("Empty failed", "Post issues to github", 'error');
             }
         });
     }
