@@ -1,5 +1,5 @@
 /*  
-*  jQuery分页插件sPage
+*  jQuery paging plugin sPage
 *  by 凌晨四点半
 *  20190729
 *  v1.2.0
@@ -12,12 +12,12 @@
         pageSize: 10,//每页显示多少条
         total: 0,//数据总条数
         showTotal: false,//是否显示总条数
-        totalTxt: "共{total}条",//数据总条数文字描述
+        totalTxt: "Total {total}",//数据总条数文字描述
         noData: false,//没有数据时是否显示分页，默认false不显示，true显示第一页
         showSkip: false,//是否显示跳页
         showPN: true,//是否显示上下翻页
-        prevPage: "上一页",//上翻页按钮文字
-        nextPage: "下一页",//下翻页按钮文字
+        prevPage: "Prev.",//上翻页按钮文字
+        nextPage: "Next",//下翻页按钮文字
         backFun: function (page) {
             //点击分页按钮回调函数，返回当前页码
         }
@@ -92,7 +92,7 @@
             pageArr.push(this.pageList.join(''));
             pageArr.push('</div>');
             if (settings.showSkip) {
-                pageArr.push('<div class="spage-skip">跳至&nbsp;<input type="text" value="' + settings.page + '"/>&nbsp;页&nbsp;&nbsp;<span data-page="go">确定</span></div>');
+                pageArr.push('<div class="spage-skip">Jump to&nbsp;<input type="text" value="' + settings.page + '"/>&nbsp;Page&nbsp;&nbsp;<span data-page="go">Determine(</span></div>');
             }
             this.element.html(pageArr.join(''));
             this.clickBtn();
